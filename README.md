@@ -52,13 +52,34 @@ Thymeleaf is a powerful templating engine that provides various expression tags 
       <p th:case="*">It's another day.</p>
   </div>
 
-## th:each: Iteration
-Used for iterating over collections and rendering elements for each item.
-Example:
+## `th:each`: Iterating Over Collections
+
+- `th:each` is used for iterating over collections (e.g., lists, arrays, sets) and rendering elements for each item in the collection.
+- It allows you to dynamically generate content based on the elements in the collection.
+
+**Example:**
+
+```html
 <ul>
     <li th:each="product : ${products}" th:text="${product.name}"></li>
 </ul>
 
-## th:object: Current Object
-Used to set the current object for expression evaluation.
-Example: <div th:object="${user}">...</div> sets the current object to user for expressions inside the <div>.
+## Thymeleaf `th:object` Attribute
+
+Thymeleaf, a versatile templating engine, provides the `th:object` attribute, which is a powerful tool for setting the current object for expression evaluation within a specific scope in your templates.
+
+## Usage
+
+- `th:object` is used to establish a new context for expressions within a specific HTML element or a block of HTML.
+- It allows you to change the context in which expressions are evaluated, which can be especially useful when dealing with nested objects or iterating over collections.
+
+## Example
+
+Consider a scenario where you have a `User` object with properties like `name` and `email`. You want to display these properties within a specific HTML block. Here's how `th:object` can be used:
+
+```html
+<div th:object="${user}">
+    <p>Name: <span th:text="*{name}"></span></p>
+    <p>Email: <span th:text="*{email}"></span></p>
+</div>
+
