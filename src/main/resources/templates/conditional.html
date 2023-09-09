@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Conditional Page</title>
+</head>
+<body>
+	<h3>-Conditional Expressions-</h3>
+	
+	<h4>if condition</h4>
+	<pre>This expression is same as single if condition in java</pre>
+	<div th:text="${employee.salary > 1000} ? 'Salary more than 1000'"></div>
+	
+	<h4>ternary condition</h4>
+	<pre>This expression is same as ternery in java</pre>
+	<div th:text="${employee.salary > 2000} ? 'Salary > 2000' : 'Salary < 2000'"></div>
+	
+	<h4>if-unless condition</h4>
+	<pre>This expression is same as if-elseif in java</pre>
+	<div th:if="${employee.salary > 1000}">if executed</div>
+	<div th:unless="${employee.salary < 2000}">unless executed</div>
+	
+	<h4>if-not condition</h4>
+	<pre>This expression is same as if(!salary>2000) in java</pre>
+	<div th:if="not ${employee.salary > 2000}">if executed</div>
+</body>
+</html>

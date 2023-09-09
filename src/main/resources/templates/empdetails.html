@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employee Details</title>
+    <style>
+		pre{
+			font-size: x-large;
+		}
+	</style>
+</head>
+<body>
+    <h1>Employee Details</h1>
+    <pre>
+        <strong>ID:</strong>     <span th:text="${savedEmp.id}">1</span><br>
+        <strong>Name:</strong>   <span th:text="${savedEmp.name}">John Doe</span><br>
+        <strong>Mobile:</strong> <span th:text="${savedEmp.mob}">123-456-7890</span><br>
+        <strong>Salary:</strong> <span th:text="${savedEmp.salary}">$50,000</span><br>
+    </pre>
+    <br>
+    <a th:href="@{/registration}">Goto Registration</a><hr>
+    <a th:href="@{/home}">Goto Home</a>
+</body>
+</html>

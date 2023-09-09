@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Home Page</title>
+</head>
+
+<body>
+	<h1>Thymeleaf Tutorial</h1>
+	<h2>String interpolation tag </h2>
+	<p th:text="|Hello, ${myEmployee1.name}! Welcome to our website.|"></p>
+	<hr>
+	<h2>Simple Variable</h2>
+	<div>Name : <span th:text="${myEmployee1.name}">ABC</span></div>
+	<div>DOB : <span th:text="${myEmployee1.mob}">0/0/0</span></div>
+	<hr>
+	<h2>Selection variable</h2>
+	<div th:object="${myEmployee}">
+		<p>Name : <span th:text="*{name}">ABC</span></p>
+		<p>DOB : <span th:text="*{mob}">0/0/0</span></p>
+	</div>
+	<hr>
+	<a th:href="@{/contact}">contact Page</a>
+	<hr>
+	<a th:href="@{/message}">message Page</a>
+	<hr>
+	<a th:href="@{/conditional}">conditional Page</a>
+	<hr>
+	<a th:href="@{/switch}">switch Page</a>
+	<hr>
+	<a th:href="@{/looping}">looping Page</a>
+	<hr>
+	<br>
+	<a th:href="@{/registration}">Registration Page</a>
+	<hr>
+</body>
+
+</html>
